@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var arr = [1, 2, 3, 4];
+
+  React.render(
+      <div>
+        {
+          arr.map(function(arrs){
+            return <div>This is {arrs}!</div>
+          })
+        }
+      </div>,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>

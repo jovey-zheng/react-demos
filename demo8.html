@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var Toggleclik = React.createClass({
+    getInitialState: function() {
+      return {liked: false};
+    },//生成state
+
+    handleClick: function(event) {
+      this.setState({liked: !this.state.liked});
+    },//点击时触发，改变state
+
+    render: function() {
+      var text = this.state.liked ? 'like' : 'haven\'t liked';
+      return (
+        <p onClick={this.handleClick}>
+          You {text} this. Click to toggle.
+        </p>
+      );
+    }
+  });
+
+  React.render(
+      <Toggleclik />
+      ,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>

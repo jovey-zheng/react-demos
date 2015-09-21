@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var Mylist = React.createClass({
+    render: function(){
+      return <ul>
+        {
+          this.props.children.map(function(param){
+            return <li>{param}</li>
+          })
+        }
+      </ul>
+    }
+  })
+
+  React.render(
+      <Mylist>
+        <span>one</span>
+        <span>two</span>
+      </Mylist>
+      ,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>

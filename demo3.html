@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var arr = [
+    <div>This is div one</div>,
+    <div>This is div two</div>
+  ];
+
+  React.render(
+      <div>
+        {arr}
+      </div>,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>

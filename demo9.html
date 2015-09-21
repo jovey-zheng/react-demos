@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/jquery.min.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var UserGist = React.createClass({
+    getInitialState: function() {
+      return {
+        username: '',
+        lastGistUrl: ''
+      };
+    },//初始化state
+
+    componentDidMount: function() {
+      $.get(this.props.source, function(result) {
+        var lastGist = result[0];
+        if (this.isMounted()) {
+          this.setState({
+            username: lastGist.owner.login,
+            lastGistUrl: lastGist.html_url
+          });
+        }
+      }.bind(this));
+    },//获取传入source值，并改变state
+
+    render: function() {
+      return (
+        <div>
+          {this.state.username} last gist is
+           <a href={this.state.lastGistUrl}> here</a>.
+        </div>
+      );
+    }
+  });
+
+  React.render(
+    <UserGist source="https://api.github.com/users/octocat/gists"/>,
+    document.getElementById('content')
+  );
+  </script>
+</body>
+</html>

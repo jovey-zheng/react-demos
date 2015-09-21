@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React - Demo</title>
+
+  <script src="react-0.13.0/build/react.js"></script>
+  <script src="react-0.13.0/build/JSXTransformer.js"></script>
+
+</head>
+<body>
+  <div id="content"></div>
+
+  <script type="text/jsx">
+  var params = 'Hello';
+
+  var Mycomponent = React.createClass({
+    handleClick: function(){
+      React.findDOMNode(this.refs.input1).focus();
+    },
+
+    render: function(){
+      return (
+        <div>
+          <input type="text" ref="input1" />
+          <input type="button" value="FocusInput1" onClick={this.handleClick} />
+        </div>
+        )
+    }
+  })
+
+  React.render(
+      <Mycomponent />
+      ,
+      document.getElementById('content')
+    );
+  </script>
+</body>
+</html>
