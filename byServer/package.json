@@ -1,0 +1,35 @@
+{
+  "name": "react-by-express",
+  "version": "1.0.0",
+  "description": "react demo via Express",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "fs": "^0.0.2",
+    "morgan": "^1.6.1"
+  },
+  "devDependencies": {
+    "coffee-script": "^1.10.0"
+  },
+  "scripts": {
+    "start": "node app",
+    "test": "node app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jovey-zheng/react-demos.git"
+  },
+  "keywords": [
+    "react",
+    "&",
+    "express"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jovey-zheng/react-demos/issues"
+  },
+  "homepage": "https://github.com/jovey-zheng/react-demos#readme"
+}
